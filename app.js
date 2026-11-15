@@ -29,6 +29,7 @@
     render();
   });
   bill.addEventListener('input', render);
+  people.addEventListener('input', render);
 
   const q = new URLSearchParams(location.search);
   if (q.has('bill')) bill.value = q.get('bill');
