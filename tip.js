@@ -15,9 +15,10 @@
     return { tip, total, each: total / people };
   }
 
-  // An amount as the page shows it.
+  // An amount as the page shows it: dollars and cents ("$19.17"). An amount
+  // that isn't a number (a share split between no one) shows as a dash.
   function money(n) {
-    return '$' + n;
+    return Number.isFinite(n) ? '$' + n.toFixed(2) : '—';
   }
 
   const api = { parseAmount, split, money };
